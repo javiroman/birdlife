@@ -398,16 +398,22 @@ Otras operaciones de dplyr:
 ```
 # crea un DF seleccionando las rows por posicion, en el ejemplo saca las primeras 10 rows:
 slice(my-dataframe,1:10)
+
 # Es igual a filter(), pero ordena las rows. orders the rows of a data frame by the values of selected columns:
 arrange(my-dataframe, month, day)
+
 # obligamos a que sea ordenados los dias descendentemente.
 arrange(my-dataframe, month, desc(day))
+
 # saca la columna/s indicada/s
 select(my-dataframe, month)
+
 # renombra columnas, ahora la columna month se llama mes.
 rename(my-dataframe, mes = month)
+
 # selecciona los valores distintos de una columna, the uniq values of this column. Es lo miso que usar unique
 distinct(my-dataframe, month)
+
 mutate()
 transmutate()
 summarise()
