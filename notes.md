@@ -393,13 +393,21 @@ Lo mismo pero con las sintaxis R estándar (built-in) sería mas engorroso:
 ```
 my-dataframe[my-dataframe$month == 11 & my-dataframe$day == 3]
 ```
+Otras operaciones de dplyr:
 
-slice(my-dataframe,1:10)  ==> crea un DF seleccionando las rows por posicion, en el ejemplo saca las primeras 10 rows
-arrange(my-dataframe, month, day) ==> Es igual a filter(), pero ordena las rows. orders the rows of a data frame by the values of selected columns.
-arrange(my-dataframe, month, desc(day)) ==> obligamos a que sea ordenados los dias descendentemente.
-select(my-dataframe, month) ==> saca la columna indicada, o las columnas indicadas
-rename(my-dataframe, mes = month) ==> renombra columnas, ahora la columna month se llama mes.
-distinct(my-dataframe, month) ==> selecciona los valores distintos de una columna, the uniq values of this column. Es lo miso que usar unique
+```
+# crea un DF seleccionando las rows por posicion, en el ejemplo saca las primeras 10 rows:
+slice(my-dataframe,1:10)
+# Es igual a filter(), pero ordena las rows. orders the rows of a data frame by the values of selected columns:
+arrange(my-dataframe, month, day)
+# obligamos a que sea ordenados los dias descendentemente.
+arrange(my-dataframe, month, desc(day))
+# saca la columna/s indicada/s
+select(my-dataframe, month)
+# renombra columnas, ahora la columna month se llama mes.
+rename(my-dataframe, mes = month)
+# selecciona los valores distintos de una columna, the uniq values of this column. Es lo miso que usar unique
+distinct(my-dataframe, month)
 mutate()
 transmutate()
 summarise()
