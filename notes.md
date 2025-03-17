@@ -1,6 +1,5 @@
-###
 ### Basic Data Types:
-###
+
 
 numeric - (10.5, 55, 787)
 integer - (1L, 55L, 100L, where the letter "L" declares this as an integer)
