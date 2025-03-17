@@ -375,16 +375,24 @@ ejemplo de ello, proporcionando nuevas formas y/o optimizaciones. Los paquetes i
 
 ## dplyr: A Grammar of Data Manipulation
 
+The easiest way to get dplyr is to install the whole tidyverse
 ```
-# The easiest way to get dplyr is to install the whole tidyverse:
 install.packages("tidyverse")
-
-# Alternatively, install just dplyr:
+```
+Alternatively, install just dplyr:
+```
 install.packages("dplyr")
+```
 
-filter(my-dataframe, month==11, day==3) => crea un DF con las rows que cumplen esas columnas
-- Lo mismo pero con las sintaxis built-in sería mas engorroso:
+Un claro ejemplo de la simplicidad de uso, contrastado con el estándar R, es este ejemplo.
+Crear un DF con las rows que cumplen esas columnas:
+```
+filter(my-dataframe, month==11, day==3)
+```
+Lo mismo pero con las sintaxis R estándar (built-in) sería mas engorroso:
+```
 my-dataframe[my-dataframe$month == 11 & my-dataframe$day == 3]
+```
 
 slice(my-dataframe,1:10)  ==> crea un DF seleccionando las rows por posicion, en el ejemplo saca las primeras 10 rows
 arrange(my-dataframe, month, day) ==> Es igual a filter(), pero ordena las rows. orders the rows of a data frame by the values of selected columns.
