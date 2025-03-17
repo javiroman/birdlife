@@ -356,12 +356,24 @@ myTable <- tableGrob(cur.tmp)
 grid.draw(myTable)
 ```
 
-# DPLYR
+# Tidyverse
 
-Para facilitar la manipulacion de datos existe un
-paquete que facilita esta tarea.
+The tidyverse is an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, 
+grammar, and data structures. Puesto que R es un paquete estadístico muy extendido, es frecuente añadir nuevas funcionalidades
+y formas de trabajar en forma de paquetes, en vez de cambiar el core de R en si mismo. Este paquete Tidyverse es un claro
+ejemplo de ello, proporcionando nuevas formas y/o optimizaciones. Los paquetes incluidos en este "universo" son:
 
-dplyr: A Grammar of Data Manipulation
+* ggplot2: Graphics, based on The Grammar of Graphics book.
+* dplyr: Grammar of data manipulation.
+* tidyr: Functions that help you get to tidy data. Tidy data is data with a consistent form.
+* purrr: R’s functional programming (FP) toolkit by providing a complete and consistent set of tools for working with functions and vectors.
+* readr: Readr provides a fast and friendly way to read rectangular data (like csv, tsv, and fwf).
+* tibble: A modern re-imagining of the data frame.
+* stringr: Cohesive set of functions designed to make working with strings as easy as possible.
+* forcats: Useful tools that solve common problems with factors.
+* lubridate: Functions for working with date-times
+
+## dplyr: A Grammar of Data Manipulation
 
 ```
 # The easiest way to get dplyr is to install the whole tidyverse:
