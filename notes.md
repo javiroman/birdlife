@@ -1,37 +1,35 @@
-### Basic Data Types:
+# Basic Data Types
 
+* numeric - (10.5, 55, 787)
+* integer - (1L, 55L, 100L, where the letter "L" declares this as an integer)
+* complex - (9 + 3i, where "i" is the imaginary part)
+* character (a.k.a. string) - ("k", "R is exciting", "FALSE", "11.5")
+* logical (a.k.a. boolean) - (TRUE or FALSE)
 
-numeric - (10.5, 55, 787)
-integer - (1L, 55L, 100L, where the letter "L" declares this as an integer)
-complex - (9 + 3i, where "i" is the imaginary part)
-character (a.k.a. string) - ("k", "R is exciting", "FALSE", "11.5")
-logical (a.k.a. boolean) - (TRUE or FALSE)
-
-###
-### Vectors:
-###
-
-- A vector is simply a list of items that are of the same type. For creating
+# Vectors
+A vector is simply a list of items that are of the same type. For creating
 a vector we use the c() function which is used to concatenate items together.
 
+```
 a <- c(1, 2, 3, 4)
 fruits <- c("banana", "apple", "orange")
 b <- 1:6 (the same as c(1:6) or c(1,2,3,4,5,6))
-
-- Podemos crear vectores con nombres: Creando
-un vector con los nombres y asociandolo al 
+```
+Podemos crear vectores con nombres: Creando un vector con los nombres y asociandolo al 
 vector original. En este punto seria un named vector.
 
+```
 > days <- c('Mon','Tue','Wed','Thu','Fri','Sat','Sun')
 > temps <- c(1,2,3,4,5,6,7) 
 > names(temps) <- days 
 > temps
 Mon Tue Wed Thu Fri Sat Sun 
   1   2   3   4   5   6   7
+```
 
-- Modificar/Añadir/Eliminar elementos de un vector:
-
+Modificar/Añadir/Eliminar elementos de un vector:
 Modificar
+```
 > v.tres
 [1] "TRUE"  "TRUE"  "FALSE"
 > v.tres[3]
@@ -39,23 +37,26 @@ Modificar
 > v.tres[3] <- "TRUE"
 > v.tres[3]
 [1] "TRUE"
-
+```
 Añadir
+```
 > v.tres <- append(v.tres, c("TRUE", "FALSE"))
 [1] "TRUE"  "TRUE"  "TRUE"  "TRUE"  "FALSE"
 > v.tres <- append(v.tres, "TRUE")           
 [1] "TRUE" "TRUE" "TRUE" "TRUE"
-
+```
 
 Eliminar
+```
 > v.uno
  [1]  1  2  3  4  5  6  7  8  9 10
 > v.uno[-c(1)] ==> Eliminamos elemento posicion uno del vector
 [1]  2  3  4  5  6  7  8  9 10
+```
 
+Operaciones sobre vectores:
 
-- Operaciones sobre vectores:
-
+```
 sum(v1)
 # Standard Deviation
 sd(v)
@@ -83,16 +84,18 @@ length(v)
 [1] 2
 > v.tres
 [1] "TRUE"  "TRUE"  "TRUE"  ""      NA      "FALSE" "T"     NA     
-
-Buscar caracteres con grep:
+```
+Buscar caracteres con grep
+```
 > v.dos
  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j"
 > grep("f", v.dos)
 [1] 6
 > grep("f|c", v.dos)
 [1] 3 6
-
-Sumar ocurrencias:
+```
+Sumar ocurrencias
+```
 > v.uno
  [1]  1  2  3  4  5  6  7  8  9 10  7  7  7  6  6
 > sum(v.uno == 7)
@@ -101,23 +104,20 @@ Sumar ocurrencias:
 [1] "TRUE"  "TRUE"  "TRUE"  ""      "TRUE"  "FALSE" "T"     "FALSE"
 > sum(v.tres == "TRUE")
 [1] 4
+```
 
-
-
-###
-### Matrix:
-###
+# Matrix
 
 A matrix is a two dimensional data set with columns and rows.
 The same as vector but two dimensions.
 
+```
 matrix(1:9, nrow = 3, ncol = 3)
 thismatrix <- matrix(c(1,2,3,4,5,6), nrow = 3, ncol = 2)
+```
+# Data Frame
 
-###
-### Data Frame:
-###
-
+```
 days <- c('lunes', 'martes', 'miercoles', 'jueves', 'viernes')
 temp <- c(22,23,24,23,21)
 rain <- c(T,T,F,F,T)
@@ -130,10 +130,10 @@ df <- data.frame(days,temp,rain)
 3 miercoles   24 FALSE
 4    jueves   23 FALSE
 5   viernes   21  TRUE
-
+```
 Note: El nombre de la columna (cada vector) es el nombre
 de la variable del vector.
-
+```
 > c1 <- 1:10
 > c2 <- letters[1:10]
 > df <- data.frame(c1, c2)
@@ -257,10 +257,8 @@ colnames(df)
 rownames(df)
 head(df)
 tail(df)
-
-###
-### Lists:
-###
+```
+# Lists
 
 Allow store data structures in one varialbe, for
 example a vector, a dataframe and a matrix.
@@ -275,41 +273,34 @@ my.list <- list(v, m, df)
 my.list <- list(un_vector = v, una_matric = m, un_dataframe = df)
 my.list$un_vector
 
-###
-### Data Input/Output -> CSV, EXCEL
-###
+# Data Input/Output -> CSV, EXCEL
 
+```
 write.csv(mtcars, file='mi_example.csv') 
 df <- read.csv('example.csv') <- Lee un dataframe
-
+```
 Note: EXCEL files. There is a new library called readxl and writexl which are really easy to 
 install and use, you can check them out here: https://readxl.tidyverse.org/
 The older library requires Java to be installed, also with the RJava library.
-
+```
 install.packages('readxl')
 library(readxl)
 excel_sheets('mi_execl_file.xlsx') -> List all sheets in an excel spreadsheet
 [1] "Sheet1"
 df <- read_excel('mi_excel_file.xlsx', sheet="Sheet1") -> como siempre carga un DataFrame
-
-Leer todo el excel:
-
+```
+Leer todo el excel
+```
 entire.df <- lapply(excel_sheets("my_excel.xlsx"),read_excel,patch="my_excel.xlsx") 
-
+```
 Note: Apply a Function over a List or Vector
-
+```
 install.packages('xlsx') => Esto es para poder escribir EXCELs
 library('xlsx')
 write.xlsx(mtcars, "output.xlsx")
-
-
-### Data Input/Output -> SQL
-### Data Input/Output -> Web Scraping
-
-###
-### Misc:
-###
-
+```
+# Misc:
+```
 data()
 ls()
 rm(variable-name)
@@ -324,16 +315,16 @@ all.equal(x, y) => is a utility to compare R objects x and y testing ‘near equ
 If they are different, comparison is still made to some extent, and a report of the differences is returned.
 rep(3, times=7)
 length(unique(cur1.df$BillingPeriodStart)) => si sale uno significa que todos los elementos son iguales
-
+```
 RStudio:
 
+```
 Ctrl+Shift+1 -> toggle full screen Editor
 Ctrl+Shift+2 -> toggle full screen Console
+```
 
-###
-### Plotting
-###
-
+# Plotting
+```
 plot(factor(mi-variable-categorica))
 
 par() => This function allows you to control various graphical "parameters"
@@ -363,16 +354,16 @@ library(gridExtra)
 
 myTable <- tableGrob(cur.tmp)
 grid.draw(myTable)
+```
 
-###
-### DPLYR
-###
+# DPLYR
 
 Para facilitar la manipulacion de datos existe un
 paquete que facilita esta tarea.
 
 dplyr: A Grammar of Data Manipulation
 
+```
 # The easiest way to get dplyr is to install the whole tidyverse:
 install.packages("tidyverse")
 
@@ -394,4 +385,7 @@ transmutate()
 summarise()
 sample_n()
 sample_frac()
+```
+
+
 
