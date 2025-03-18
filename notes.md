@@ -350,6 +350,40 @@ In summary:
 * [[ ]] returns the elements themselves.
 ```
 
+Vamos a crear una named-list de named-lists, o dicho de otra forma
+una lista de listas anidadas:
+
+```
+# Create the inner lists
+inner_list_1 <- list(inner_list_1_element_1 = "Element 1.1",
+                     inner_list_1_element_2 = "Element 1.2",
+                     inner_list_1_element_3 = "Element 1.3")
+
+inner_list_2 <- list(inner_list_2_element_1 = "Element 2.1",
+                     inner_list_2_element_2 = "Element 2.2",
+                     inner_list_2_element_3 = "Element 2.3")
+
+inner_list_3 <- list(inner_list_3_element_1 = "Element 3.1",
+                     inner_list_3_element_2 = "Element 3.2",
+                     inner_list_3_element_3 = "Element 3.3")
+
+# Create the main list containing the inner lists
+mi_list <- list(inner_list_1 = inner_list_1,
+                inner_list_2 = inner_list_2,
+                inner_list_3 = inner_list_3)
+
+# Print the list
+print(mi_list)
+```
+Para obtener un elemento en particular, por ejemplo "Element 3.2":
+
+```
+element_3_2 <- mi_list[["inner_list_3"]][["inner_list_3_element_2"]]
+
+# Print the element
+print(element_3_2)
+```
+
 # Data Input/Output -> CSV, EXCEL
 
 ```
@@ -496,6 +530,66 @@ transmutate()
 summarise()
 sample_n()
 sample_frac()
+```
+
+## purr: FP
+
+The tidyverse package in R provides some useful tools for managing lists, especially through the purrr package, 
+which is part of the tidyverse. The purrr package is designed for functional programming and provides a consistent 
+and concise syntax for working with lists and other data structures.
+
+Here are some common functions from purrr that can be used to manage lists:
+
+* map(): Apply a function to each element of a list.
+* map2(): Apply a function to corresponding elements of two lists.
+* pmap(): Apply a function to corresponding elements of multiple lists.
+* reduce(): Reduce a list to a single value by iteratively applying a function.
+* keep(): Keep elements that satisfy a predicate.
+* discard(): Discard elements that satisfy a predicate.
+* pluck(): Extract elements by name or position.
+
+Here are some examples to illustrate the use of these functions:
+
+```
+# Create a list
+my_list <- list(a = 1, b = 2, c = 3)
+
+# Use map() to apply a function to each element
+squared_list <- map(my_list, ~ .x ^ 2)
+print(squared_list)  # Output: $a [1] 1, $b [1] 4, $c [1] 9
+
+# Use map2() to apply a function to corresponding elements of two lists
+list1 <- list(a = 1, b = 2, c = 3)
+list2 <- list(x = 10, y = 20, z = 30)
+sum_list <- map2(list1, list2, ~ .x + .y)
+print(sum_list)  # Output: $a [1] 11, $b [1] 22, $c [1] 33
+
+# Use pmap() to apply a function to corresponding elements of multiple lists
+list1 <- list(a = 1, b = 2, c = 3)
+list2 <- list(x = 10, y = 20, z = 30)
+list3 <- list(m = 100, n = 200, o = 300)
+product_list <- pmap(list(list1, list2, list3), ~ ..1 * ..2 * ..3)
+print(product_list)  # Output: $a [1] 1000, $b [1] 8000, $c [1] 27000
+
+# Use reduce() to reduce a list to a single value
+my_list <- list(1, 2, 3, 4, 5)
+sum_value <- reduce(my_list, `+`)
+print(sum_value)  # Output: [1] 15
+
+# Use keep() to keep elements that satisfy a predicate
+my_list <- list(a = 1, b = 2, c = 3)
+filtered_list <- keep(my_list, ~ .x > 1)
+print(filtered_list)  # Output: $b [1] 2, $c [1] 3
+
+# Use discard() to discard elements that satisfy a predicate
+my_list <- list(a = 1, b = 2, c = 3)
+filtered_list <- discard(my_list, ~ .x > 1)
+print(filtered_list)  # Output: $a [1] 1
+
+# Use pluck() to extract elements by name or position
+nested_list <- list(a = list(b = list(c = 42)))
+value <- pluck(nested_list, "a", "b", "c")
+print(value)  # Output: [1] 42
 ```
 
 
