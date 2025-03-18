@@ -724,3 +724,71 @@ ggplot(data, aes(x = x, y = y)) +
   theme_minimal()  # Aplica un tema minimalista
 ```
 
+La metodología de trabajo se ilustra en los siguientes parrafos:
+
+Cada gráfica ggplot2 tiene tres componentes clave:
+
+1. **data**
+2. Un conjunto de **aesthetic mappings**, entre variables de los datos y propiedades visuales
+3. Al menos una **layer**, la cual describe como renderizar cada observación de los datos. 
+   Las layers son creadas mediante la función **geom**.
+
+Veamos un ejemplo:
+
+```
+ggplot(mpg, aes(x = displ, y = hwy)) + 
+  geom_point()
+```
+
+Esta gráfica produce un diagrama de dispersión (scatterplot):
+
+1. Data: el dataset de ejemplo mpg.
+2. Aesthetic mapping: observación "engine size" mapeada en la posición "x", observación "fuel economy" mapeada
+   en la posición "y".
+3. Layer: points.
+
+Es muy importante entender el patrón de uso de ggplot2. Los datos y los aesthetic mappings
+son proporcionados como parámetros a la función ggplot2, y las layers se añaden mediante
+el símbolo "+". 
+
+Almost every plot maps a variable to x and y, so naming these aesthetics is tedious, so the 
+first two unnamed arguments to aes() will be mapped to x and y. This means that the following 
+code is identical to the example above:
+
+```
+ggplot(mpg, aes(displ, hwy)) +
+  geom_point()
+```
+
+Algunos ejemplos de este patrón se muestran aqui:
+
+```
+ggplot(mpg, aes(cty, hwy)) + 
+  geom_point()
+  
+ggplot(diamonds, aes(carat, price)) 
+  + geom_point()
+  
+ggplot(economics, aes(date, unemploy)) + 
+  geom_line()
+  
+ggplot(mpg, aes(cty)) + 
+  geom_histogram()
+```
+
+To add additional variables to a plot, we can use other aesthetics like colour, shape, and size.
+These work in the same way as the x and y aesthetics, and are added into the call to aes():
+
+```
+aes(displ, hwy, colour = class)
+aes(displ, hwy, shape = drv)
+aes(displ, hwy, size = cyl)
+```
+Entendamos este ejemplo.
+
+```
+ggplot(mpg, aes(displ, hwy, colour = class)) +
+  geom_point()
+```
+
+
