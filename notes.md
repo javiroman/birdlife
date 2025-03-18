@@ -467,6 +467,17 @@ myTable <- tableGrob(cur.tmp)
 grid.draw(myTable)
 ```
 
+En R tenemos disponibles distintos sistemas gráficos, aunque los más comunes son:
+
+- Sistema gráfico base de R (autor: R Core Team and contributors). El núcleo (core en inglés) gráfico en R se encuentra en los paquetes graphics (contiene las funciones de gráficos base: plot, hist, etc.) y grDevices (que implementa los distintos dispositivos gráficos: pdf, ps, png, …).
+
+- Lattice (autor:Deepayan Sarkar). El libro Lattice. Multivariate Data Visualization with R (http://www.springer.com/gp/book/9780387759685) proporciona una gran cantidad de ejemplos (con código R).
+
+- ggplot2 (autor: Hadley Wickham). Hadley Wickham ha escrito un libro en el que explica de forma muy didáctica los fundamentos para elaborar gráficos con este paquete. En este enlace lo puedes encontrar http://link.springer.com/book/10.1007%2F978-3-319-24277-4
+
+- Esquisse is a package built on top of ggplot2 that provides interactive drag-and-drop visualizations. The package creates a Tableau-like interface for plotting in ggplot2, allowing the user to go through the data quickly and without the code
+
+- Plotly is the second most popular visualization package in R after ggplot2. Whereas ggplot2 is used for static plots, plotly is used for creating dynamic plots. Similarly, it offers a plethora of options in terms of chart type we can visualize our data with. Still, compared to ggplot2, it is primarily utilized for producing interactive and 3D web-based plots that are lacking in ggplot2 
 # Tidyverse
 
 The tidyverse is an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, 
