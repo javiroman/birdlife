@@ -4,7 +4,7 @@
 * integer - (1L, 55L, 100L, where the letter "L" declares this as an integer)
 * complex - (9 + 3i, where "i" is the imaginary part)
 * character (a.k.a. string) - ("k", "R is exciting", "FALSE", "11.5")
-* logical (a.k.a. boolean) - (TRUE or FALSE)
+* logical (a.k.a. boolean) - (TRUE or FALSE, T or F)
 
 # Vectors
 A vector is simply a list of items that are of the same type. For creating
