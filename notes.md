@@ -264,7 +264,13 @@ Allow store data structures in one varialbe, for
 example a vector, a dataframe and a matrix.
 A list in R can contain many different data types inside it. A list is a 
 collection of data which is ordered and changeable.
+In R lists act as containers. Unlike atomic vectors, the contents of a list are 
+not restricted to a single mode and can encompass any mixture of data types. 
+Lists are sometimes called generic vectors, because the elements of a list 
+can by of any type of R object, even lists containing further lists. 
+This property makes them fundamentally different from atomic vectors.
 
+```
 v <- c(1, 2, 3)
 m <- matrix(1:10,nrow=2)
 df <- mtcars
@@ -272,6 +278,77 @@ df <- mtcars
 my.list <- list(v, m, df)
 my.list <- list(un_vector = v, una_matric = m, un_dataframe = df)
 my.list$un_vector
+```
+```
+> list_data <- list(
+    c("Jan","Feb","Mar"), 
+    matrix(c(3,9,5,1,-2,8), nrow = 2), 
+    list("green",12.3)
+   )
+> names(list_data) <- c("A_Vector", "A_Matrix", "A_List")
+> list_data
+$A_Vector
+[1] "Jan" "Feb" "Mar"
+
+$A_Matrix
+     [,1] [,2] [,3]
+[1,]    3    5   -2
+[2,]    9    1    8
+
+$A_List
+$A_List[[1]]
+[1] "green"
+
+$A_List[[2]]
+[1] 12.3
+
+> list_data$A_Vector
+[1] "Jan" "Feb" "Mar"
+
+> list_data$A_List
+[[1]]
+[1] "green"
+
+[[2]]
+[1] 12.3
+
+> list_data$A_List[1]
+[[1]]
+[1] "green"
+
+> list_data$A_List[2]
+[[1]]
+[1] 12.3
+```
+Otra forma de crear una named-list en una sola línea:
+```
+> list_data <- list(
+    A_Vector =  c("Jan","Feb","Mar"), 
+    A_Matrix = matrix(c(3,9,5,1,-2,8), nrow = 2), 
+    A_List = list("green",12.3))
+```
+
+Esto es importante: In R, double square brackets [[ ]] are used to access or extract elements
+from a list. When you use single square brackets [ ], you get a list containing the specified
+elements. However, when you use double square brackets [[ ]], you directly access 
+the elements themselves.
+```
+# Create a list in R
+my_list <- list(a = 1, b = 2, c = 3)
+
+# Using single square brackets, you get a sublist
+sublist <- my_list["a"]
+print(sublist)  # Output: $a [1] 1
+
+# Using double square brackets, you get the element itself
+element <- my_list[[ "a" ]]
+print(element)  # Output: [1] 1
+```
+In summary:
+```
+* [ ] returns a list containing the specified elements.
+* [[ ]] returns the elements themselves.
+```
 
 # Data Input/Output -> CSV, EXCEL
 
