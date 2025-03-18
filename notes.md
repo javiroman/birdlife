@@ -603,5 +603,119 @@ value <- pluck(nested_list, "a", "b", "c")
 print(value)  # Output: [1] 42
 ```
 
+## ggplot2: Grammar of Graphics
 
+La "grammar of graphics" (gramática de gráficos) es un marco teórico para describir y construir gráficos de manera sistemática. 
+Fue popularizada en gran parte por el libro "The Grammar of Graphics" de Leland Wilkinson y se encuentra en la base de muchas 
+herramientas modernas de visualización de datos, como ggplot2 en R.
+
+En este contexto, dos conceptos clave son la "data" (datos) y el "mapping" (mapeo):
+
+Data (Datos)
+Los datos son la entrada fundamental para cualquier visualización. En el contexto de la gramática de gráficos, los datos se estructuran generalmente en forma de tablas (data frames), donde cada fila representa una observación y cada columna una variable. Los datos pueden provenir de cualquier fuente y pueden ser de cualquier tipo: cuantitativos, cualitativos, temporales, etc.
+
+Mapping (Mapeo)
+El mapeo es el proceso de vincular las variables de los datos a las propiedades visuales de los gráficos. Esto se hace utilizando "aesthetics" (estéticas), que son los atributos visuales que pueden ser modificados para representar datos. Algunos ejemplos comunes de estéticas incluyen:
+
+- x: la posición en el eje x.
+- y: la posición en el eje y.
+- color: el color de los elementos gráficos.
+- size: el tamaño de los elementos gráficos.
+- shape: la forma de los puntos en un gráfico de dispersión.
+- line: el tipo de línea en un gráfico de líneas.
+
+Para ilustrar estos conceptos, veamos un ejemplo simple utilizando ggplot2 en R:
+
+```
+library(ggplot2)
+
+# Ejemplo de datos
+data <- data.frame(
+  x = rnorm(100),
+  y = rnorm(100),
+  category = sample(letters[1:3], 100, replace = TRUE)
+)
+
+# Creación del gráfico
+ggplot(data, aes(x = x, y = y, color = category)) +
+  geom_point()
+```
+En este ejemplo:
+
+- data: es el data frame que contiene las variables x, y y category.
+- aes(): es la función que define el mapeo de las variables a las estéticas.
+  - x = x: mapea la variable x a la estética de posición en el eje x.
+  - y = y: mapea la variable y a la estética de posición en el eje y.
+  - color = category: mapea la variable category a la estética de color.
+- geom_point(): añade puntos al gráfico, utilizando las estéticas definidas
+
+En el contexto de la gramática de gráficos, y específicamente en herramientas como ggplot2 en R, 
+los componentes del mapeo (mapping) incluyen los siguientes elementos: capa (layer), escalas (scales), 
+coordenadas (coord), facetas (facet) y tema (theme). Aquí hay una explicación de cada uno:
+
+1. Layer (Capa)
+Las capas son componentes fundamentales en la construcción de gráficos. Cada capa representa una adición a la visualización, como puntos, líneas, barras, etc. Los componentes de una capa incluyen:
+
+- Datos (Data): El conjunto de datos que se visualizará en la capa.
+- Estéticas (Aesthetics): Las variables del conjunto de datos mapeadas a atributos visuales (ejes, colores, tamaños, etc.).
+- Geometrías (Geometries): El tipo de gráfico usado para representar los datos (puntos, líneas, barras, etc.).
+- Estadísticas (Statistics): Transformaciones estadísticas aplicadas a los datos antes de la visualización.
+- Posición (Position): Ajustes de posición aplicados a los elementos gráficos (apilamiento, apilamiento en diente de sierra, etc.).
+
+A layer is a collection of geometric elements and statistical transformations. Geometric elements, geoms for short, represent what you actually see in the plot: points, lines, polygons, etc. Statistical transformations, stats for short, summarise the data: for example, binning and counting observations to create a histogram, or fitting a linear model.
+```
+ggplot(data, aes(x = x, y = y)) +
+  geom_point() +  # Capa de puntos
+  geom_smooth()   # Capa de línea suavizada
+```
+
+2. Scales (Escalas)
+Las escalas controlan cómo se mapean los datos a las estéticas. Esto incluye la transformación de los datos y la asignación de valores a las estéticas visuales. Ejemplos de escalas incluyen:
+
+- scale_x_continuous(): Escala continua para el eje x.
+- scale_y_log10(): Escala logarítmica para el eje y.
+- scale_color_manual(): Escala de color manual.
+
+Scales map values in the data space to values in the aesthetic space. This includes the use of colour, shape or size. Scales also draw the legend and axes, which make it possible to read the original data values from the plot (an inverse mapping).
+```
+ggplot(data, aes(x = x, y = y, color = category)) +
+  geom_point() +
+  scale_color_manual(values = c("red", "green", "blue"))
+```
+
+3. Coord (Coordenadas)
+El sistema de coordenadas define cómo se mapean los datos a la posición en el gráfico. Algunos sistemas de coordenadas comunes incluyen:
+
+- coord_cartesian(): Sistema de coordenadas cartesiano.
+- coord_polar(): Sistema de coordenadas polares.
+- coord_flip(): Intercambia los ejes x e y.
+
+A coord, or coordinate system, describes how data coordinates are mapped to the plane of the graphic. It also provides axes and gridlines to help read the graph. We normally use the Cartesian coordinate system, but a number of others are available, including polar coordinates and map projections.
+```
+ggplot(data, aes(x = x, y = y)) +
+  geom_point() +
+  coord_flip()  # Intercambia los ejes x e y
+```
+
+4. Facet (Facetas)
+Las facetas permiten dividir los datos en subconjuntos y crear gráficos separados para cada subconjunto. Esto es útil para comparar diferentes grupos dentro de los datos. Ejemplos de facetas incluyen:
+
+- facet_wrap(): Crea una matriz de gráficos separados por una variable.
+- facet_grid(): Crea una cuadrícula de gráficos usando dos variables.
+
+A facet specifies how to break up and display subsets of data as small multiples. This is also known as conditioning or latticing/trellising.
+```
+ggplot(data, aes(x = x, y = y)) +
+  geom_point() +
+  facet_wrap(~ category)  # Divide el gráfico por la variable 'category'
+```
+
+5. Theme (Tema)
+El tema controla la apariencia general del gráfico, incluyendo elementos no relacionados con los datos como fuentes, colores de fondo, bordes, etc. ggplot2 proporciona varios temas predefinidos y permite personalizar cada aspecto del gráfico.
+A theme controls the finer points of display, like the font size and background colour. While the defaults in ggplot2 have been chosen with care, you may need to consult other references to create an attractive plot.
+```
+ggplot(data, aes(x = x, y = y)) +
+  geom_point() +
+  theme_minimal()  # Aplica un tema minimalista
+```
 
