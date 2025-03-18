@@ -611,10 +611,10 @@ herramientas modernas de visualización de datos, como ggplot2 en R.
 
 En este contexto, dos conceptos clave son la "data" (datos) y el "mapping" (mapeo):
 
-Data (Datos)
+- Data (Datos)
 Los datos son la entrada fundamental para cualquier visualización. En el contexto de la gramática de gráficos, los datos se estructuran generalmente en forma de tablas (data frames), donde cada fila representa una observación y cada columna una variable. Los datos pueden provenir de cualquier fuente y pueden ser de cualquier tipo: cuantitativos, cualitativos, temporales, etc.
 
-Mapping (Mapeo)
+- Mapping (Mapeo)
 El mapeo es el proceso de vincular las variables de los datos a las propiedades visuales de los gráficos. Esto se hace utilizando "aesthetics" (estéticas), que son los atributos visuales que pueden ser modificados para representar datos. Algunos ejemplos comunes de estéticas incluyen:
 
 - x: la posición en el eje x.
@@ -654,6 +654,7 @@ los componentes del mapeo (mapping) incluyen los siguientes elementos: capa (lay
 coordenadas (coord), facetas (facet) y tema (theme). Aquí hay una explicación de cada uno:
 
 1. Layer (Capa)
+   
 Las capas son componentes fundamentales en la construcción de gráficos. Cada capa representa una adición a la visualización, como puntos, líneas, barras, etc. Los componentes de una capa incluyen:
 
 - Datos (Data): El conjunto de datos que se visualizará en la capa.
@@ -670,6 +671,7 @@ ggplot(data, aes(x = x, y = y)) +
 ```
 
 2. Scales (Escalas)
+   
 Las escalas controlan cómo se mapean los datos a las estéticas. Esto incluye la transformación de los datos y la asignación de valores a las estéticas visuales. Ejemplos de escalas incluyen:
 
 - scale_x_continuous(): Escala continua para el eje x.
@@ -684,6 +686,7 @@ ggplot(data, aes(x = x, y = y, color = category)) +
 ```
 
 3. Coord (Coordenadas)
+   
 El sistema de coordenadas define cómo se mapean los datos a la posición en el gráfico. Algunos sistemas de coordenadas comunes incluyen:
 
 - coord_cartesian(): Sistema de coordenadas cartesiano.
@@ -698,6 +701,7 @@ ggplot(data, aes(x = x, y = y)) +
 ```
 
 4. Facet (Facetas)
+   
 Las facetas permiten dividir los datos en subconjuntos y crear gráficos separados para cada subconjunto. Esto es útil para comparar diferentes grupos dentro de los datos. Ejemplos de facetas incluyen:
 
 - facet_wrap(): Crea una matriz de gráficos separados por una variable.
@@ -711,6 +715,7 @@ ggplot(data, aes(x = x, y = y)) +
 ```
 
 5. Theme (Tema)
+   
 El tema controla la apariencia general del gráfico, incluyendo elementos no relacionados con los datos como fuentes, colores de fondo, bordes, etc. ggplot2 proporciona varios temas predefinidos y permite personalizar cada aspecto del gráfico.
 A theme controls the finer points of display, like the font size and background colour. While the defaults in ggplot2 have been chosen with care, you may need to consult other references to create an attractive plot.
 ```
