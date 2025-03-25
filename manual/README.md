@@ -6,7 +6,7 @@
 * character (a.k.a. string) - ("k", "R is exciting", "FALSE", "11.5")
 * logical (a.k.a. boolean) - (TRUE or FALSE, T or F)
 
-# Vectors
+# Vector
 A vector is simply a list of items that are of the same type. For creating
 a vector we use the c() function which is used to concatenate items together.
 
@@ -258,7 +258,7 @@ rownames(df)
 head(df)
 tail(df)
 ```
-# Lists
+# List
 
 Allow store data structures in one varialbe, for
 example a vector, a dataframe and a matrix.
@@ -410,7 +410,7 @@ install.packages('xlsx') => Esto es para poder escribir EXCELs
 library('xlsx')
 write.xlsx(mtcars, "output.xlsx")
 ```
-# Misc:
+# Misc
 ```
 data()
 ls()
@@ -515,33 +515,108 @@ Lo mismo pero con las sintaxis R estándar (built-in) sería mas engorroso:
 ```
 my-dataframe[my-dataframe$month == 11 & my-dataframe$day == 3]
 ```
-Otras operaciones de dplyr:
+
+### Filter & Slice (filtro horizontal, grep)
 
 ```
-# crea un DF seleccionando las rows por posicion, en el ejemplo saca las primeras 10 rows:
+# Selecciona un subconconjunto de rows del DF que cumplen esas condiciones
+filter(my-dataframe, month == 11, day == 3, carrier == "AA")
+
+# crea un DF seleccionando las rows por posicion, en el ejemplo saca las primeras 10 rows, es decir,
+# el parametro es un slice de las posicion primera y ultima de rows que se quiere extraer.
 slice(my-dataframe,1:10)
 
+```
+
+### Arrange (filtro horizontal ordenado)
+
+```
 # Es igual a filter(), pero ordena las rows. orders the rows of a data frame by the values of selected columns:
 arrange(my-dataframe, month, day)
 
 # obligamos a que sea ordenados los dias descendentemente.
 arrange(my-dataframe, month, desc(day))
+```
 
-# saca la columna/s indicada/s
+### Select & Rename (filtro vertical, cut)
+
+```
+# extrae a un DF la/s columna/s indicada/s
 select(my-dataframe, month)
 
 # renombra columnas, ahora la columna month se llama mes.
 rename(my-dataframe, mes = month)
+```
 
+### Distinct (filtro horizontal)
+
+```
 # selecciona los valores distintos de una columna, the uniq values of this column. Es lo miso que usar unique
 distinct(my-dataframe, month)
-
-mutate()
-transmutate()
-summarise()
-sample_n()
-sample_frac()
 ```
+
+### Mutate & Transmutate
+
+```
+# Añade nuevas columnas con la combinacíón de otras: En el ejemplo creamos una nueva
+# columna que es el resultado de restar una ya existente de otra ya existente.
+mutate(my-dataframe, new_colum = columna_1 - columna_2)
+
+# Igual pero realiza una operación de multiplicación
+mutate(my-dataframe, new_colum = columna_1 * columna_2)
+
+# Es igual a mutate, pero mutate devuelve el DF entero, y esta devuelve un DF
+# con solo la nueva columna creada.
+transmutate(my-dataframe, new_colum = columna_1 * columna_2)
+```
+
+### Summarise & Sample_n & Sample_frac (agregados)
+
+```
+# Devuelve un DF con la columna creada donde ha realizado un agregado de otra columna,
+# en el ejemplo vemos que la funcion de agregado es realizar la media (mean).
+summarise(flights, new_column = mean(air_time, na.rm = TRUE))
+Source: local data freame [1 x 1]
+
+   new_column
+        (dbl)
+1      50.343
+
+# Otro ejemplo con la función de agregado sum:
+summarise(flights, total_column = sum(air_time, na.rm = TRUE))
+
+# Devuelve un conjunto de rows (el indicado) aleatoriamente. En el ejemplo
+# devuelve 10 rows seleccionadas al azar.
+sample_n(my-dataframe, 10)
+
+# Igual que sample_n, pero en vez de un numero absoluto de rows, se indica 
+# una fracción de rows aleatorias. Por ejemplo extraemos un 10% de las rows
+# aleatoriamente
+sample_frac(my-dataframe, 0.1)
+```
+
+### Pipe Operator: %>%
+
+El core de R ofrece una sintaxis potente y consistente para indexar y manipular DF y otras 
+estructuras de datos. Sin embargo, el código se vuelve fácilmente confuso y engorroso 
+para tareas más complejas. Esta es la razón principal por la que las funciones dplyr 
+(a veces llamadas verbos) han ganado una enorme popularidad. Estos verbos se conectan 
+mediante tuberías, lo que resulta en un código que se puede leer y comprender de una forma
+intutitva el orden en que se escribe. Este es un concepto similar a las pipes en los sistemas
+UNIX, donde se encadenan comandos mediante "pipes".
+
+La mejor forma de entender las pipes en dplyr es mediante este ejemplo:
+
+```
+# Aplicamos tres operaciones sobre un objeto
+third(second(first(x)))
+
+# La forma propuesta por Dplyr es mas intutiva:
+first(x) %>% second(x) %>% third(x)
+```
+
+Nota: El atajo de teclado para introducir el Pipe Operator es **Control-Shift-M**
+
 
 ## purr: FP
 
