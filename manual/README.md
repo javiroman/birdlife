@@ -615,7 +615,30 @@ third(second(first(x)))
 first(x) %>% second(x) %>% third(x)
 ```
 
-Nota: El atajo de teclado para introducir el Pipe Operator es **Control-Shift-M**
+Nota: El atajo de teclado para introducir el Pipe Operator es **Control-Shift-M
+
+## tidyr: FP
+
+The goal of tidyr is to help you create tidy data. Tidy data is data where:
+
+1. Each variable is a column
+2. Each observation is a row
+3. Each value is a cell
+
+If you ensure that your data is tidy, you’ll spend less time fighting with the tools 
+and more time working on your analysis.
+
+It is often said that 80% of data analysis is spent on the cleaning and preparing data. 
+And it’s not just a first step, but it must be repeated many times over the course of 
+analysis as new problems come to light or new data is collected. To get a handle on the 
+problem, this paper focuses on a small, but important, aspect of data cleaning that I 
+call **data tidying**: structuring datasets to facilitate analysis.
+
+More about tidy data concept: [Data Tidying](https://tidyr.tidyverse.org/articles/tidy-data.html)
+
+### Gather
+
+
 
 
 ## purr: FP
