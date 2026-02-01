@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <mlt LC_NUMERIC="C" producer="main_bin" root="/home/javiroman/HACK/dev/javiroman-github/public/birdlife.git/media/kdenlive/tarabilla" version="7.32.0">
- <profile colorspace="709" description="636x648 30.00fps" display_aspect_den="648" display_aspect_num="636" frame_rate_den="1" frame_rate_num="30" height="648" progressive="1" sample_aspect_den="1" sample_aspect_num="1" width="636"/>
- <producer id="producer1" in="00:00:00.000" out="00:00:39.167">
-  <property name="length">1176</property>
+ <profile colorspace="709" description="HDV 1440x1080p 29.97 fps" display_aspect_den="9" display_aspect_num="16" frame_rate_den="1001" frame_rate_num="30000" height="1080" progressive="1" sample_aspect_den="3" sample_aspect_num="4" width="1440"/>
+ <producer id="producer1" in="00:00:00.000" out="00:00:39.172">
+  <property name="length">00:00:39.200</property>
   <property name="eof">pause</property>
   <property name="resource">tarabilla-europea-paramo.jpg</property>
   <property name="ttl">25</property>
@@ -33,8 +33,8 @@
   <property name="kdenlive:meta.extractor.White Balance:">0</property>
   <property name="kdenlive:monitorPosition">149</property>
  </producer>
- <producer id="producer2" in="00:00:00.000" out="00:00:18.800">
-  <property name="length">565</property>
+ <producer id="producer2" in="00:00:00.000" out="00:00:25.392">
+  <property name="length">762</property>
   <property name="eof">pause</property>
   <property name="resource">tarabilla-europea-seo.png</property>
   <property name="ttl">25</property>
@@ -56,58 +56,7 @@
   <property name="kdenlive:kextractor">1</property>
   <property name="kdenlive:monitorPosition">149</property>
  </producer>
- <producer id="producer0" in="00:00:00.000" out="00:05:57.167">
-  <property name="length">2147483647</property>
-  <property name="eof">continue</property>
-  <property name="resource">black</property>
-  <property name="aspect_ratio">1</property>
-  <property name="mlt_service">color</property>
-  <property name="kdenlive:playlistid">black_track</property>
-  <property name="mlt_image_format">rgba</property>
-  <property name="set.test_audio">0</property>
- </producer>
- <playlist id="playlist0">
-  <blank length="00:00:18.867"/>
-  <entry in="00:00:00.000" out="00:00:22.967" producer="producer1">
-   <property name="kdenlive:id">4</property>
-   <property name="kdenlive:activeeffect">0</property>
-   <filter id="filter0">
-    <property name="background">colour:0</property>
-    <property name="mlt_service">affine</property>
-    <property name="kdenlive_id">pan_zoom</property>
-    <property name="transition.rect">00:00:00.000=0 0 636 648;00:00:15.933=-257 -265 1198 1220</property>
-    <property name="transition.distort">0</property>
-    <property name="use_normalised">0</property>
-    <property name="producer.resource">0x00000000</property>
-    <property name="transition.repeat_off">1</property>
-    <property name="transition.mirror_off">1</property>
-    <property name="kdenlive:collapsed">0</property>
-   </filter>
-   <filter id="filter1">
-    <property name="background">colour:0</property>
-    <property name="mlt_service">affine</property>
-    <property name="kdenlive_id">pan_zoom</property>
-    <property name="transition.rect">0=0 0 636 648</property>
-    <property name="transition.distort">0</property>
-    <property name="use_normalised">0</property>
-    <property name="producer.resource">0x00000000</property>
-    <property name="transition.repeat_off">1</property>
-    <property name="transition.mirror_off">1</property>
-    <property name="kdenlive:collapsed">0</property>
-   </filter>
-  </entry>
- </playlist>
- <playlist id="playlist1"/>
- <tractor id="tractor0" in="00:00:00.000" out="00:00:41.833">
-  <property name="kdenlive:trackheight">89</property>
-  <property name="kdenlive:timeline_active">1</property>
-  <property name="kdenlive:collapsed">0</property>
-  <property name="kdenlive:thumbs_format"/>
-  <property name="kdenlive:audio_rec"/>
-  <track hide="audio" producer="playlist0"/>
-  <track hide="audio" producer="playlist1"/>
- </tractor>
- <producer id="producer3" in="00:00:00.000" out="00:00:04.967">
+ <producer id="producer3" in="00:00:00.000" out="00:00:04.972">
   <property name="length">00:00:05.000</property>
   <property name="eof">pause</property>
   <property name="resource">paramosalvaje.jpeg</property>
@@ -130,8 +79,8 @@
   <property name="kdenlive:kextractor">1</property>
   <property name="kdenlive:monitorPosition">0</property>
  </producer>
- <producer id="producer4" in="00:00:00.000" out="00:00:21.100">
-  <property name="length">634</property>
+ <producer id="producer4" in="00:00:00.000" out="00:00:21.088">
+  <property name="length">00:00:21.133</property>
   <property name="eof">pause</property>
   <property name="resource"/>
   <property name="meta.media.progressive">1</property>
@@ -173,53 +122,26 @@ Especie: Saxicola rubicola&lt;/content>
   <property name="meta.media.height">648</property>
   <property name="kdenlive:monitorPosition">150</property>
  </producer>
- <playlist id="playlist2">
-  <entry in="00:00:00.000" out="00:00:04.967" producer="producer3">
-   <property name="kdenlive:id">6</property>
-   <filter id="filter2" in="00:00:01.967" out="00:00:04.967">
-    <property name="start">1</property>
-    <property name="level">1</property>
-    <property name="mlt_service">brightness</property>
-    <property name="kdenlive_id">fade_to_black</property>
-    <property name="alpha">00:00:00.000=1;00:00:03.000=0</property>
-    <property name="kdenlive:collapsed">0</property>
-   </filter>
-  </entry>
-  <entry in="00:00:00.000" out="00:00:17.300" producer="producer4">
-   <property name="kdenlive:id">7</property>
-   <filter id="filter3" out="00:00:02.900">
-    <property name="start">1</property>
-    <property name="level">1</property>
-    <property name="mlt_service">brightness</property>
-    <property name="kdenlive_id">fade_from_black</property>
-    <property name="alpha">00:00:00.000=0;00:00:02.900=1</property>
-    <property name="kdenlive:collapsed">0</property>
-   </filter>
-   <filter id="filter4" in="00:00:13.600" out="00:00:17.300">
-    <property name="start">1</property>
-    <property name="level">1</property>
-    <property name="mlt_service">brightness</property>
-    <property name="kdenlive_id">fade_to_black</property>
-    <property name="alpha">00:00:00.000=1;00:00:03.700=0</property>
-   </filter>
-  </entry>
-  <blank length="00:00:16.000"/>
-  <entry in="00:00:00.000" out="00:00:18.800" producer="producer2">
-   <property name="kdenlive:id">5</property>
-   <property name="kdenlive:activeeffect">1</property>
-   <filter id="filter5" out="00:00:03.267">
-    <property name="start">1</property>
-    <property name="level">1</property>
-    <property name="mlt_service">brightness</property>
-    <property name="kdenlive_id">fade_from_black</property>
-    <property name="alpha">00:00:00.000=0;00:00:03.267=1</property>
-    <property name="kdenlive:collapsed">0</property>
-   </filter>
-   <filter id="filter6">
+ <producer id="producer0" in="00:00:00.000" out="00:06:05.572">
+  <property name="length">2147483647</property>
+  <property name="eof">continue</property>
+  <property name="resource">black</property>
+  <property name="aspect_ratio">1</property>
+  <property name="mlt_service">color</property>
+  <property name="kdenlive:playlistid">black_track</property>
+  <property name="mlt_image_format">rgba</property>
+  <property name="set.test_audio">0</property>
+ </producer>
+ <playlist id="playlist0">
+  <blank length="00:00:19.419"/>
+  <entry in="00:00:00.000" out="00:00:21.588" producer="producer1">
+   <property name="kdenlive:id">4</property>
+   <property name="kdenlive:activeeffect">0</property>
+   <filter id="filter0">
     <property name="background">colour:0</property>
     <property name="mlt_service">affine</property>
     <property name="kdenlive_id">pan_zoom</property>
-    <property name="transition.rect">0=0 0 636 648</property>
+    <property name="transition.rect">00:00:00.000=0 0 1440 1080;00:00:16.717=-560 -420 2580 1935</property>
     <property name="transition.distort">0</property>
     <property name="use_normalised">0</property>
     <property name="producer.resource">0x00000000</property>
@@ -229,8 +151,106 @@ Especie: Saxicola rubicola&lt;/content>
    </filter>
   </entry>
  </playlist>
+ <playlist id="playlist1"/>
+ <tractor id="tractor0" in="00:00:00.000" out="00:00:41.008">
+  <property name="kdenlive:trackheight">89</property>
+  <property name="kdenlive:timeline_active">1</property>
+  <property name="kdenlive:collapsed">0</property>
+  <property name="kdenlive:thumbs_format"/>
+  <property name="kdenlive:audio_rec"/>
+  <track hide="audio" producer="playlist0"/>
+  <track hide="audio" producer="playlist1"/>
+ </tractor>
+ <producer id="producer5" in="00:00:00.000" out="00:00:08.275">
+  <property name="length">249</property>
+  <property name="eof">pause</property>
+  <property name="resource"/>
+  <property name="meta.media.progressive">1</property>
+  <property name="aspect_ratio">1</property>
+  <property name="seekable">1</property>
+  <property name="mlt_service">kdenlivetitle</property>
+  <property name="kdenlive:duration">00:00:05;00</property>
+  <property name="kdenlive:clipname">Distribución...</property>
+  <property name="xmldata">&lt;kdenlivetitle LC_NUMERIC="C" duration="150" height="1080" out="149" width="1920">
+ &lt;item type="QGraphicsTextItem" z-index="0">
+  &lt;position x="651" y="462">
+   &lt;transform>1,0,0,0,1,0,0,0,1&lt;/transform>
+  &lt;/position>
+  &lt;content alignment="1" box-height="74" box-width="617.438" font="Cantarell" font-color="255,255,255,255" font-italic="0" font-outline="0" font-outline-color="255,255,255,255" font-pixel-size="61" font-underline="0" font-weight="400" letter-spacing="0" line-spacing="0" shadow="0;#64000000;3;3;3" tab-width="80" typewriter="0;2;1;0;0">Distribución en España&lt;/content>
+ &lt;/item>
+ &lt;startviewport rect="0,0,1920,1080"/>
+ &lt;endviewport rect="0,0,1920,1080"/>
+ &lt;background color="0,0,0,255"/>
+&lt;/kdenlivetitle>
+</property>
+  <property name="xml">was here</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">8</property>
+  <property name="kdenlive:control_uuid">{2b6571fe-5306-4d8d-82ae-cb965c78f0ca}</property>
+  <property name="kdenlive:clip_type">2</property>
+  <property name="kdenlive:uniqueId">{6766f61d-447c-412f-b69e-d53c61505557}</property>
+  <property name="kdenlive:file_hash">fb9feb73d6392f7686c17d0f07dcafed</property>
+  <property name="force_reload">0</property>
+  <property name="meta.media.width">1920</property>
+  <property name="meta.media.height">1080</property>
+ </producer>
+ <playlist id="playlist2">
+  <entry in="00:00:00.000" out="00:00:04.972" producer="producer3">
+   <property name="kdenlive:id">6</property>
+   <filter id="filter2" in="00:00:01.969" out="00:00:04.972">
+    <property name="start">1</property>
+    <property name="level">1</property>
+    <property name="mlt_service">brightness</property>
+    <property name="kdenlive_id">fade_to_black</property>
+    <property name="alpha">00:00:00.000=1;00:00:03.003=0</property>
+    <property name="kdenlive:collapsed">0</property>
+   </filter>
+  </entry>
+  <entry in="00:00:00.000" out="00:00:16.450" producer="producer4">
+   <property name="kdenlive:id">7</property>
+   <filter id="filter3" out="00:00:02.903">
+    <property name="start">1</property>
+    <property name="level">1</property>
+    <property name="mlt_service">brightness</property>
+    <property name="kdenlive_id">fade_from_black</property>
+    <property name="alpha">00:00:00.000=0;00:00:02.903=1</property>
+    <property name="kdenlive:collapsed">0</property>
+   </filter>
+   <filter id="filter4" in="00:00:13.981" out="00:00:16.483">
+    <property name="start">1</property>
+    <property name="level">1</property>
+    <property name="mlt_service">brightness</property>
+    <property name="kdenlive_id">fade_to_black</property>
+    <property name="alpha">00:00:00.000=1;00:00:02.502=0</property>
+   </filter>
+  </entry>
+  <blank length="00:00:19.553"/>
+  <entry in="00:00:00.000" out="00:00:06.039" producer="producer5">
+   <property name="kdenlive:id">8</property>
+   <property name="kdenlive:activeeffect">0</property>
+   <filter id="filter1" out="00:00:02.302">
+    <property name="start">1</property>
+    <property name="level">1</property>
+    <property name="mlt_service">brightness</property>
+    <property name="kdenlive_id">fade_from_black</property>
+    <property name="alpha">00:00:00.000=0;00:00:02.302=1</property>
+    <property name="kdenlive:collapsed">0</property>
+   </filter>
+  </entry>
+  <entry in="00:00:00.000" out="00:00:18.418" producer="producer2">
+   <property name="kdenlive:id">5</property>
+   <filter id="filter5" out="00:00:04.438">
+    <property name="start">1</property>
+    <property name="level">1</property>
+    <property name="mlt_service">brightness</property>
+    <property name="kdenlive_id">fade_from_black</property>
+    <property name="alpha">00:00:00.000=0;00:00:04.438=1</property>
+    <property name="kdenlive:collapsed">0</property>
+   </filter>
+  </entry>
+ </playlist>
  <playlist id="playlist3"/>
- <tractor id="tractor1" in="00:00:00.000" out="00:00:57.133">
+ <tractor id="tractor1" in="00:00:00.000" out="00:01:05.539">
   <property name="kdenlive:trackheight">139</property>
   <property name="kdenlive:timeline_active">1</property>
   <property name="kdenlive:collapsed">0</property>
@@ -239,12 +259,12 @@ Especie: Saxicola rubicola&lt;/content>
   <track hide="audio" producer="playlist2"/>
   <track hide="audio" producer="playlist3"/>
  </tractor>
- <tractor id="tractor2" in="00:00:00.000" out="00:00:57.133">
+ <tractor id="tractor2" in="00:00:00.000" out="00:01:05.539">
   <property name="kdenlive:sequenceproperties.hasAudio">0</property>
   <property name="kdenlive:sequenceproperties.hasVideo">1</property>
   <property name="kdenlive:clip_type">2</property>
-  <property name="kdenlive:duration">00:00:57.167</property>
-  <property name="kdenlive:maxduration">1715</property>
+  <property name="kdenlive:duration">00:01:05.572</property>
+  <property name="kdenlive:maxduration">1965</property>
   <property name="kdenlive:clipname">Sequence 1</property>
   <property name="kdenlive:description"/>
   <property name="kdenlive:uuid">{5f78ff4c-e8c2-49ba-b432-b3fd1e672224}</property>
@@ -255,11 +275,11 @@ Especie: Saxicola rubicola&lt;/content>
   <property name="kdenlive:id">3</property>
   <property name="kdenlive:file_hash">dd38e46905ab930b4a950f611cc1fedc</property>
   <property name="kdenlive:folderid">2</property>
-  <property name="kdenlive:sequenceproperties.activeTrack">0</property>
+  <property name="kdenlive:sequenceproperties.activeTrack">1</property>
   <property name="kdenlive:sequenceproperties.audioTarget">1</property>
   <property name="kdenlive:sequenceproperties.disablepreview">0</property>
   <property name="kdenlive:sequenceproperties.documentuuid">{5f78ff4c-e8c2-49ba-b432-b3fd1e672224}</property>
-  <property name="kdenlive:sequenceproperties.position">1327</property>
+  <property name="kdenlive:sequenceproperties.position">1980</property>
   <property name="kdenlive:sequenceproperties.scrollPos">0</property>
   <property name="kdenlive:sequenceproperties.tracks">4</property>
   <property name="kdenlive:sequenceproperties.tracksCount">2</property>
@@ -274,7 +294,6 @@ Especie: Saxicola rubicola&lt;/content>
   <property name="kdenlive:sequenceproperties.guides">[
 ]
 </property>
-  <property name="kdenlive:monitorPosition">0</property>
   <track producer="producer0"/>
   <track producer="tractor0"/>
   <track producer="tractor1"/>
@@ -381,13 +400,32 @@ Especie: Saxicola rubicola&lt;/content>
   <property name="kdenlive:docproperties.opensequences">{5f78ff4c-e8c2-49ba-b432-b3fd1e672224}</property>
   <property name="kdenlive:docproperties.previewextension"/>
   <property name="kdenlive:docproperties.previewparameters"/>
-  <property name="kdenlive:docproperties.profile">/home/javiroman/.local/share/kdenlive/profiles/customprofile1</property>
+  <property name="kdenlive:docproperties.profile">hdv_1080_30p</property>
   <property name="kdenlive:docproperties.proxyextension"/>
   <property name="kdenlive:docproperties.proxyimageminsize">2000</property>
   <property name="kdenlive:docproperties.proxyimagesize">800</property>
   <property name="kdenlive:docproperties.proxyminsize">1000</property>
   <property name="kdenlive:docproperties.proxyparams"/>
   <property name="kdenlive:docproperties.proxyresize">640</property>
+  <property name="kdenlive:docproperties.rendercategory">Generic (HD for web, mobile devices...)</property>
+  <property name="kdenlive:docproperties.rendercustomquality">-1</property>
+  <property name="kdenlive:docproperties.renderendguide">-1</property>
+  <property name="kdenlive:docproperties.renderexportaudio">0</property>
+  <property name="kdenlive:docproperties.renderfullcolorrange">0</property>
+  <property name="kdenlive:docproperties.rendermode">0</property>
+  <property name="kdenlive:docproperties.renderplay">0</property>
+  <property name="kdenlive:docproperties.renderpreview">0</property>
+  <property name="kdenlive:docproperties.renderprofile">MP4-H264/AAC</property>
+  <property name="kdenlive:docproperties.renderrescale">0</property>
+  <property name="kdenlive:docproperties.renderrescaleheight">324</property>
+  <property name="kdenlive:docproperties.renderrescalewidth">318</property>
+  <property name="kdenlive:docproperties.renderspeed">6</property>
+  <property name="kdenlive:docproperties.renderstartguide">-1</property>
+  <property name="kdenlive:docproperties.renderstemaudio">0</property>
+  <property name="kdenlive:docproperties.rendertcoverlay">0</property>
+  <property name="kdenlive:docproperties.rendertctype">-1</property>
+  <property name="kdenlive:docproperties.rendertwopass">0</property>
+  <property name="kdenlive:docproperties.renderurl">/home/javiroman/Videos/youtube-tarabilla-video.mp4</property>
   <property name="kdenlive:docproperties.seekOffset">30000</property>
   <property name="kdenlive:docproperties.sessionid">{d4554fde-4ec4-4fa8-855f-561dada20b56}</property>
   <property name="kdenlive:docproperties.uuid">{5f78ff4c-e8c2-49ba-b432-b3fd1e672224}</property>
@@ -962,77 +1000,7 @@ Especie: Saxicola rubicola&lt;/content>
             "isVisible": true,
             "multiSplitterLayout": {
                 "frames": {
-                    "189282": {
-                        "currentTabIndex": 1,
-                        "dockWidgets": [
-                            "transition_list",
-                            "effect_list"
-                        ],
-                        "geometry": {
-                            "height": 703,
-                            "width": 481,
-                            "x": 0,
-                            "y": 0
-                        },
-                        "id": "189282",
-                        "isNull": false,
-                        "mainWindowUniqueName": "KdenliveKDDock",
-                        "objectName": "effect_list",
-                        "options": 0
-                    },
-                    "189348": {
-                        "currentTabIndex": 0,
-                        "dockWidgets": [
-                            "timeline"
-                        ],
-                        "geometry": {
-                            "height": 555,
-                            "width": 2078,
-                            "x": 480,
-                            "y": 703
-                        },
-                        "id": "189348",
-                        "isNull": false,
-                        "mainWindowUniqueName": "KdenliveKDDock",
-                        "objectName": "timeline",
-                        "options": 0
-                    },
-                    "189383": {
-                        "currentTabIndex": 0,
-                        "dockWidgets": [
-                            "effect_stack",
-                            "clip_properties"
-                        ],
-                        "geometry": {
-                            "height": 703,
-                            "width": 744,
-                            "x": 481,
-                            "y": 0
-                        },
-                        "id": "189383",
-                        "isNull": false,
-                        "mainWindowUniqueName": "KdenliveKDDock",
-                        "objectName": "effect_stack",
-                        "options": 0
-                    },
-                    "189449": {
-                        "currentTabIndex": 0,
-                        "dockWidgets": [
-                            "project_bin"
-                        ],
-                        "geometry": {
-                            "height": 555,
-                            "width": 480,
-                            "x": 0,
-                            "y": 703
-                        },
-                        "id": "189449",
-                        "isNull": false,
-                        "mainWindowUniqueName": "KdenliveKDDock",
-                        "objectName": "project_bin",
-                        "options": 0
-                    },
-                    "189484": {
+                    "229063": {
                         "currentTabIndex": 1,
                         "dockWidgets": [
                             "clipmonitor",
@@ -1044,10 +1012,80 @@ Especie: Saxicola rubicola&lt;/content>
                             "x": 1225,
                             "y": 0
                         },
-                        "id": "189484",
+                        "id": "229063",
                         "isNull": false,
                         "mainWindowUniqueName": "KdenliveKDDock",
                         "objectName": "projectmonitor",
+                        "options": 0
+                    },
+                    "229128": {
+                        "currentTabIndex": 0,
+                        "dockWidgets": [
+                            "project_bin"
+                        ],
+                        "geometry": {
+                            "height": 555,
+                            "width": 480,
+                            "x": 0,
+                            "y": 703
+                        },
+                        "id": "229128",
+                        "isNull": false,
+                        "mainWindowUniqueName": "KdenliveKDDock",
+                        "objectName": "project_bin",
+                        "options": 0
+                    },
+                    "229162": {
+                        "currentTabIndex": 0,
+                        "dockWidgets": [
+                            "effect_stack",
+                            "clip_properties"
+                        ],
+                        "geometry": {
+                            "height": 703,
+                            "width": 744,
+                            "x": 481,
+                            "y": 0
+                        },
+                        "id": "229162",
+                        "isNull": false,
+                        "mainWindowUniqueName": "KdenliveKDDock",
+                        "objectName": "effect_stack",
+                        "options": 0
+                    },
+                    "229227": {
+                        "currentTabIndex": 0,
+                        "dockWidgets": [
+                            "timeline"
+                        ],
+                        "geometry": {
+                            "height": 555,
+                            "width": 2078,
+                            "x": 480,
+                            "y": 703
+                        },
+                        "id": "229227",
+                        "isNull": false,
+                        "mainWindowUniqueName": "KdenliveKDDock",
+                        "objectName": "timeline",
+                        "options": 0
+                    },
+                    "229261": {
+                        "currentTabIndex": 1,
+                        "dockWidgets": [
+                            "transition_list",
+                            "effect_list"
+                        ],
+                        "geometry": {
+                            "height": 703,
+                            "width": 481,
+                            "x": 0,
+                            "y": 0
+                        },
+                        "id": "229261",
+                        "isNull": false,
+                        "mainWindowUniqueName": "KdenliveKDDock",
+                        "objectName": "effect_list",
                         "options": 0
                     }
                 },
@@ -1058,7 +1096,7 @@ Especie: Saxicola rubicola&lt;/content>
                                 {
                                     "children": [
                                         {
-                                            "guestId": "189282",
+                                            "guestId": "229261",
                                             "isContainer": false,
                                             "isVisible": true,
                                             "sizingInfo": {
@@ -1080,7 +1118,7 @@ Especie: Saxicola rubicola&lt;/content>
                                             }
                                         },
                                         {
-                                            "guestId": "189383",
+                                            "guestId": "229162",
                                             "isContainer": false,
                                             "isVisible": true,
                                             "sizingInfo": {
@@ -1091,18 +1129,18 @@ Especie: Saxicola rubicola&lt;/content>
                                                     "y": 0
                                                 },
                                                 "maxSizeHint": {
-                                                    "height": 524321,
+                                                    "height": 524326,
                                                     "width": 524291
                                                 },
                                                 "minSize": {
-                                                    "height": 124,
+                                                    "height": 138,
                                                     "width": 259
                                                 },
                                                 "percentageWithinParent": 0.290852228303362
                                             }
                                         },
                                         {
-                                            "guestId": "189484",
+                                            "guestId": "229063",
                                             "isContainer": false,
                                             "isVisible": true,
                                             "sizingInfo": {
@@ -1135,7 +1173,7 @@ Especie: Saxicola rubicola&lt;/content>
                                             "y": 0
                                         },
                                         "maxSizeHint": {
-                                            "height": 524326,
+                                            "height": 524321,
                                             "width": 1572873
                                         },
                                         "minSize": {
@@ -1148,7 +1186,7 @@ Especie: Saxicola rubicola&lt;/content>
                                 {
                                     "children": [
                                         {
-                                            "guestId": "189449",
+                                            "guestId": "229128",
                                             "isContainer": false,
                                             "isVisible": true,
                                             "sizingInfo": {
@@ -1160,17 +1198,17 @@ Especie: Saxicola rubicola&lt;/content>
                                                 },
                                                 "maxSizeHint": {
                                                     "height": 524321,
-                                                    "width": 524287
+                                                    "width": 524291
                                                 },
                                                 "minSize": {
-                                                    "height": 143,
-                                                    "width": 80
+                                                    "height": 188,
+                                                    "width": 251
                                                 },
                                                 "percentageWithinParent": 0.18764659890539484
                                             }
                                         },
                                         {
-                                            "guestId": "189348",
+                                            "guestId": "229227",
                                             "isContainer": false,
                                             "isVisible": true,
                                             "sizingInfo": {
@@ -1203,11 +1241,11 @@ Especie: Saxicola rubicola&lt;/content>
                                             "y": 703
                                         },
                                         "maxSizeHint": {
-                                            "height": 524300,
+                                            "height": 524287,
                                             "width": 1048574
                                         },
                                         "minSize": {
-                                            "height": 143,
+                                            "height": 103,
                                             "width": 160
                                         },
                                         "percentageWithinParent": 0.4411764705882353
@@ -1225,11 +1263,11 @@ Especie: Saxicola rubicola&lt;/content>
                                     "y": 0
                                 },
                                 "maxSizeHint": {
-                                    "height": 1048626,
+                                    "height": 1048608,
                                     "width": 1048574
                                 },
                                 "minSize": {
-                                    "height": 388,
+                                    "height": 348,
                                     "width": 746
                                 },
                                 "percentageWithinParent": 1.0
@@ -1289,34 +1327,16 @@ Especie: Saxicola rubicola&lt;/content>
     ],
     "serializationVersion": 3
 }</property>
-  <property name="kdenlive:docproperties.rendercategory">Generic (HD for web, mobile devices...)</property>
-  <property name="kdenlive:docproperties.rendercustomquality">-1</property>
-  <property name="kdenlive:docproperties.renderendguide">-1</property>
-  <property name="kdenlive:docproperties.renderexportaudio">0</property>
-  <property name="kdenlive:docproperties.renderfullcolorrange">0</property>
-  <property name="kdenlive:docproperties.rendermode">0</property>
-  <property name="kdenlive:docproperties.renderplay">0</property>
-  <property name="kdenlive:docproperties.renderpreview">0</property>
-  <property name="kdenlive:docproperties.renderprofile">MP4-H264/AAC</property>
-  <property name="kdenlive:docproperties.renderrescale">0</property>
-  <property name="kdenlive:docproperties.renderrescaleheight">324</property>
-  <property name="kdenlive:docproperties.renderrescalewidth">318</property>
-  <property name="kdenlive:docproperties.renderspeed">6</property>
-  <property name="kdenlive:docproperties.renderstartguide">-1</property>
-  <property name="kdenlive:docproperties.renderstemaudio">0</property>
-  <property name="kdenlive:docproperties.rendertcoverlay">0</property>
-  <property name="kdenlive:docproperties.rendertctype">-1</property>
-  <property name="kdenlive:docproperties.rendertwopass">0</property>
-  <property name="kdenlive:docproperties.renderurl">/home/javiroman/Videos/youtube-tarabilla-video.mp4</property>
   <property name="xml_retain">1</property>
-  <entry in="00:00:00.000" out="00:00:39.167" producer="producer1"/>
-  <entry in="00:00:00.000" out="00:00:09.633" producer="producer2"/>
-  <entry in="00:00:00.000" out="00:00:33.233" producer="tractor2"/>
-  <entry in="00:00:00.000" out="00:00:04.967" producer="producer3"/>
-  <entry in="00:00:00.000" out="00:00:21.100" producer="producer4"/>
+  <entry in="00:00:00.000" out="00:00:39.172" producer="producer1"/>
+  <entry in="00:00:00.000" out="00:00:18.785" producer="producer2"/>
+  <entry in="00:00:00.000" out="00:00:04.972" producer="producer3"/>
+  <entry in="00:00:00.000" out="00:00:21.088" producer="producer4"/>
+  <entry in="00:00:00.000" out="00:00:57.124" producer="tractor2"/>
+  <entry in="00:00:00.000" out="00:00:04.972" producer="producer5"/>
  </playlist>
- <tractor id="tractor3" in="00:00:00.000" out="00:00:57.133">
+ <tractor id="tractor3" in="00:00:00.000" out="00:01:05.539">
   <property name="kdenlive:projectTractor">1</property>
-  <track in="00:00:00.000" out="00:00:57.133" producer="tractor2"/>
+  <track in="00:00:00.000" out="00:01:05.539" producer="tractor2"/>
  </tractor>
 </mlt>
